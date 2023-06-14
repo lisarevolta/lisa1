@@ -1,0 +1,8 @@
+ // Define a modifier to restrict access to the owner only
+    modifier onlyOwner() {
+        require(
+            msg.sender == owner,
+            "Only the contract owner can execute this function."
+        );
+        _;
+    }
